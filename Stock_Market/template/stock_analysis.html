@@ -1,0 +1,56 @@
+
+
+{% extends "layout.html" %}
+{% block body %}
+  
+	
+
+	<form method="post" action="{{ url_for('train_model_save') }}" enctype="multipart/form-data" class="contact1-form validate-form">
+				<fieldset>
+             
+                <div class="form-group">
+                            <label for="stock">Company Name</label>
+                     <input type="text" name="stock" id="stock"> 
+					 <label for="index">Index</label>
+                     <select name = "index" , id="index">
+						<option value="nse">INDIA</option>
+						<option value="nyse">NEW YORK</option>
+						</select>     
+                </div>
+				
+                                
+            </fieldset>
+            
+				<div class="container-contact1-form-btn">
+					<button type="submit" class="contact1-form-btn">
+						<span>
+							Train Model
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button> 
+					 &nbsp;<a href="{{ url_for('admin') }}" class="btn"><h5 style="background-color:powderblue;">HOME</h5></a>
+					 
+
+
+				</div>
+				 <p>
+                    {% if DataOut%}
+{{ DataOut}} <br> <br>  
+                                              
+                    {% endif %}
+             
+			  </p>
+				<br>
+				
+				
+				<br><br>
+				</form>
+				
+				
+				
+				
+			
+</div>
+</div>
+            
+{% endblock %}
